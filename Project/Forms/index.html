@@ -1,22 +1,34 @@
 <html>
-    <body>        
-        <center>
-            <h1>UNIVERSITY ADMIT ELIGIBILITY PREDICTION</h1>
-            <form>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body style="background-color: rgb(34,34,34); ">        
+        
+            <center><h2>UNIVERSITY ADMIT ELIGIBILITY PREDICTION</h2></center>
+            <form><table>
+            <tr>    
+                <th>
             <label for="gre">GRE SCORE </label>
-            <input type="text" id="gre" name="gre" required><br><br>
-            <label for="ielts">TOEFL/IELTS SCORE </label>
-            <input type="text" id="ielts" name="ielts" required><br><br>
-            <label for="sop">SOP </label>
-            <input type="text" id="sop" name="sop" required><br><br>
-            <label for="lor">LOR </label>
-            <input type="text" id="lor" name="lor" required><br><br>
-            <label for="cgpa">CGPA </label>
-            <input type="text" id="cgpa" name="cgpa" required><br><br>
-            <label for="research">RESEARCH </label><br>
-            <input type="radio" id="yes" name="research" value="Yes, I have done research work" required>
-            <label for="yes">Yes, I have done research work</label><br>
-            <input type="radio" id="no" name="research" value="No, I havnt done any research work" required>
-            <label for="no">No, I havent done any research work</label><br><br>
-            <input type="submit" value="Predict">
-        </form></center>
+                </th>
+            <td>
+            <input type="number" id="gre" name="gre" required><br><br>
+            </td></tr>
+            <tr><th><label for="ielts">TOEFL/IELTS SCORE </label></th>
+            <td><input type="number" id="ielts" name="ielts" required><br><br></td></tr>
+            <tr><th><label for="sop">SOP </label></th>
+            <td><input type="number" id="sop" name="sop" required><br><br></td></tr>
+            <tr><th><label for="lor">LOR </label></th>
+            <td><input type="number" id="lor" name="lor" required><br><br></td></tr>
+            <tr><th><label for="cgpa">CGPA </label></th>
+            <td><input type="number" id="cgpa" name="cgpa" required><br><br></td></tr>
+            <tr><th><label for="research">RESEARCH </label><br></th>
+            <td padding-bottom = "15px">
+                <input type="radio" id="yes" name="research" value="Yes" required>
+                <label for="yes">Yes</label>
+            </td>
+            <td padding-bottom= "15px">
+                <input type="radio" id="no" name="research" value="No" required>
+                <label for="no">No</label>
+            </td></tr>
+            <tr><th><center><input type="submit" value="Predict"></center></th></tr>
+        </form>
