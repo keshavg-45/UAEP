@@ -11,16 +11,16 @@ matplotlib.use('Agg')
 
 # EDA Packages
 
-st.set_page_config(page_title='GAD Analysis', page_icon="C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\logo.png",
+st.set_page_config(page_title='GAD Analysis', page_icon=r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\logo.png",
                    layout='wide', initial_sidebar_state='auto')
 sns.set(rc={'figure.figsize': (20, 15)})
 
-DATA_URL = ('C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\dataset\Admission_Predict.csv')
+DATA_URL = (r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\dataset\Admission_Predict.csv")
 
 st.markdown('# Graduate Admission Dataset')
 st.markdown('### **Analysis of Graduate Admission Dataset**')
 
-img = Image.open('C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\gad.png')
+img = Image.open(r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\gad.png")
 st.image(img, width=720, caption='Graduate Admission Dataset')
 
 st.markdown('### **About the Dataset:**')
@@ -33,7 +33,7 @@ st.info('This dataset was built \
                         The graduate studies dataset is a dataset which describes the probability of \
                             selections for Indian students dependent on the following parameters below.')
 
-img = Image.open('C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\univ.png')
+img = Image.open(r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\univ.png")
 st.image(img, width=720, caption="Top 5 Universities in the US")
 
 st.markdown('### **Dataset Info:**')
@@ -47,7 +47,7 @@ st.info('\t 1. GRE Score (out of 340), \
         \n\t 7. CGPA (out of 10), \
         \n\t 8. Chance of Admittance (ranging from 0 to 1)')
 
-img = Image.open('C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\par.png')
+img = Image.open(r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\par.png")
 st.image(img, width=720, caption="Influence of the Attributes on the Dataset")
 
 
@@ -125,7 +125,7 @@ st.markdown("Tick the box on the side panel to run Prediction Model.")
 
 if st.sidebar.checkbox('View Prediction Model'):
     st.subheader('Prediction Model')
-    pickle_in = open('models/Multiple_Linear_Regression.pkl', 'rb')
+    pickle_in = open(r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Linear_Regression.pkl", 'rb')
     model = pickle.load(pickle_in)
 
     @st.cache()
@@ -164,11 +164,11 @@ if st.sidebar.checkbox('View Prediction Model'):
         if prediction[0] >= 0.6667:
             st.success(
                 'Congratulations! You are eligible to apply for this university!')
-            chance = Image.open('C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\chance.png')
+            chance = Image.open(r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\chance.png")
             st.image(chance, width=300, caption="High Chances !")
         else:
             st.caption('Better Luck Next Time :)')
-            no_chance = Image.open('C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\noChance.jpg')
+            no_chance = Image.open(r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\noChance.jpg")
             st.image(no_chance, width=300, caption="Low Chances :(")
 
     # Main function for the UI of the webpage
