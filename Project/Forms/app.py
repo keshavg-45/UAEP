@@ -20,7 +20,7 @@ DATA_URL = (r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\dataset\Adm
 st.markdown('# Graduate Admission Dataset')
 st.markdown('### **Analysis of Graduate Admission Dataset**')
 
-img = Image.open(r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\gad.png")
+img = Image.open(r"C:\Users\Admin\OneDrive\Desktop\Kaushal\ibm\UAEP\Project\Forms\images\gad.png")
 st.image(img, width=720, caption='Graduate Admission Dataset')
 
 st.markdown('### **About the Dataset:**')
@@ -47,7 +47,7 @@ st.info('\t 1. GRE Score (out of 340), \
         \n\t 7. CGPA (out of 10), \
         \n\t 8. Chance of Admittance (ranging from 0 to 1)')
 
-img = Image.open(r"C:\Users\KeshavG\Desktop\stuffs\IBM\UAEP\Project\Forms\images\par.png")
+img = Image.open(r"C:\Users\Admin\OneDrive\Desktop\Kaushal\ibm\UAEP\Project\Forms\images\par.png")
 st.image(img, width=720, caption="Influence of the Attributes on the Dataset")
 
 
