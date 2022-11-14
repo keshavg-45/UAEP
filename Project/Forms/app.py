@@ -159,7 +159,7 @@ if st.sidebar.checkbox('View Prediction Model'):
         prediction = model.predict(
             [[gre, toefl, univ_rank, sop, lor, cgpa, resc]])
 
-        st.info("Chance of Admittance for University Rank " + str(univ_rank) + " = " + str(prediction[0]*100) +" %")
+        st.info("Chance of Admittance for University Rank " + str(univ_rank) + " = " + str(prediction[0]) +" %")
                 # str(prediction[0]*100))
         if prediction[0] >= 0.6667:
             st.success(
