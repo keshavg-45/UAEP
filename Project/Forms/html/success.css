@@ -1,0 +1,14 @@
+<<<<<<< HEAD
+body {
+    background-image: url('Project\Forms\images\success1.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+=======
+body {
+    background-image: url('Project\Forms\images\success1.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+>>>>>>> e91b18820d067c22192e63ce7909509d03c4b07e
+  }
