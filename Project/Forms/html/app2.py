@@ -29,7 +29,7 @@ def result():
    prediction = int(prediction)
    print(type(prediction))
    if (prediction == 0):
-      return render_template("result.html", result = "Loan wiil Not be Approved")
+      return render_template("failure.html", result = "Loan wiil Not be Approved")
    else:
     #showing the prediction results in a UI
       return render_template("success.html", result = "Loan will be Approved")
@@ -39,5 +39,5 @@ def result():
   
 if __name__=="__main__":
 # app.run(host='0.0.0.0', port=8000, debug=True) 
-  port=int(os.environ.get('PORT',5000)) 
+  port=int(os.environ.get('PORT',8080)) 
   app.run(debug=False)
