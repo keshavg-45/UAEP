@@ -1,34 +1,26 @@
 <head>
 <style>
 body {
-  background-image: url('static/failure.png');
+  background-image: url('static/image/failure.png');
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: cover;
 }
-pre{
-
-position: absolute;
-top: 5px;
-
-left: 900px;
-font-size: 40px;
-}
 p{
 
   position: absolute;
-  top: 50px;
+  top: 20px;
  
-  left: 1100px;
+  left: 900px;
 font-size: 40px;
 }
 
 </style>
 </head>
 <body>
-<pre>The Percentage is</pre>
+<p>The Percentage is</p>
 <p id="failure"></p>
-<script>  
+<script>
 let x = '{{prediction_text}}';
 document.getElementById("failure").innerHTML = x;
 </script>
