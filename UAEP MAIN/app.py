@@ -4,7 +4,7 @@ import pickle
 import pandas
 import os
 app=Flask (__name__)
-model = pickle.load(open ('UAEP MAIN\Linear_Regression.pkl', 'rb'))  
+model = pickle.load(open ('C:/Users/Adhitya Ramakrishnan/Desktop/git/UAEP/UAEP MAIN/Linear_Regression.pkl', 'rb'))  
 @app.route('/') # rendering the html template 
 def form1(): 
     return render_template('form1.html')
