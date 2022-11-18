@@ -4,7 +4,7 @@ import pickle
 import pandas
 import os
 app=Flask (__name__)
-model = pickle.load(open ('UAEP MAIN\Linear_Regression.pkl', 'rb'))  
+model = pickle.load(open ('UAEP MAIN\model\clsLinear_Regression.pkl', 'rb'))  
 @app.route('/') # rendering the html template 
 def form1(): 
     return render_template('form1.html')
@@ -13,7 +13,7 @@ def form1():
 
 @app.route('/predict', methods = [ "POST","GET"])# route to show the predictions in a web UI def 
 def predict():
-   input_feature=[int(x) for x in request.form.values() ]
+   input_feature=[float(x) for x in request.form.values() ]
     #input_feature = np.transpose(input_feature)
    input_feature=[np.array(input_feature)]
    print(input_feature)
