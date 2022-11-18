@@ -22,40 +22,78 @@ p{
   left: 300px;
 font-size: 40px;
 }
-.alert {
-  padding: 20px;
-  background-color: #f44336;
+.open-button {
+  background-color: #555;
   color: white;
-  opacity: 1;
-  transition: opacity 0.6s;
-  margin-bottom: 15px;
-}
-
-.alert.success {background-color: #04AA6D;}
-
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
+  padding: 16px 20px;
+  border: none;
   cursor: pointer;
-  transition: 0.3s;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
 }
 
-.closebtn:hover {
-  color: black;
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
 }
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+
+
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: red;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;}
 </style>
 </head>
 <body>
-<!--<pre>The Percentage is</pre>-->
-<strong><p id="failure"></p></strong>
-<script>
+  <button class="open-button" onclick="openForm()">Open Form</button>
 
-let x = '{{prediction_text}}';
-document.getElementById("failure").innerHTML = x;
-</script>
+  <div class="form-popup" id="myForm">
+    <form class="form-container">
+      <h1>Your Percentage is</h1>
+  
+      <label><b id="failure"></b></label>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+  
+  <script>
+  let x= '{{prediction_text}}';
+  document.getElementById("failure").innerHTML = x;
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+  </script>
 </body>
 </html>
