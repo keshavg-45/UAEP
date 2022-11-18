@@ -13,7 +13,7 @@ def form1():
 
 @app.route('/predict', methods = [ "POST","GET"])# route to show the predictions in a web UI def 
 def predict():
-   input_feature=[int(x) for x in request.form.values() ]
+   input_feature=[float(x) for x in request.form.values() ]
     #input_feature = np.transpose(input_feature)
    input_feature=[np.array(input_feature)]
    print(input_feature)
@@ -24,7 +24,7 @@ def predict():
    # predictions using the loaded model file prediction=model.predict(data)
    prediction=model.predict(data)
    print (prediction)
-   prediction = int(prediction)
+   prediction = float(prediction)
    print(type(prediction))
    if (prediction >= 60):
       return render_template("sucess.html", prediction_text = prediction)
