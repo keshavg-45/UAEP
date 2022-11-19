@@ -7,7 +7,7 @@ import os
 import requests
 
 # NOTE: you must manually set API_KEY below using information retrieved from your IBM Cloud account.
-API_KEY = "k3Q5fmxjxR_3yQl3PFJKApbgpZlrTmdpfJ4NH_Dgjbp6"
+API_KEY = "5krRUFWdHgYbO4G9dm85TYoeeTlXRfJtTPcF5wo6ZrPF"
 token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey":API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
 mltoken = token_response.json()["access_token"]
 
@@ -33,7 +33,7 @@ def predict():
    #data_scaled = scale.fit_transform(data) #data = pandas.DataFrame(, columns=names)
    # predictions using the loaded model file prediction=model.predict(data)
   payload_scoring = {"input_data": [{"fields": ['gre', 'ielts', 'sop', 'lor', 'cgpa', 'research paper', 'university rank'], "values": [[GRE_SCORE, TOFEL_SCORE, SOP_SCORE, LOR_SCORE,CGPA,RESEARCH_PAPER,UNIVERSITY_RANK]]}]}
-  response_scoring = requests.post('https://us-south.ml.cloud.ibm.com/ml/v4/deployments/21fc1a96-00cc-4c5f-878d-a69c3ab0481a/predictions?version=2022-11-18', json=payload_scoring,headers={'Authorization': 'Bearer ' + mltoken})
+  response_scoring = requests.post('https://us-south.ml.cloud.ibm.com/ml/v4/deployments/776e4e48-19ec-4dc8-81b8-333f4fc115d6/predictions?version=2022-11-18', json=payload_scoring,headers={'Authorization': 'Bearer ' + mltoken})
   print("Scoring Responce")
   print(response_scoring.json())
   predictions = response_scoring.json()
